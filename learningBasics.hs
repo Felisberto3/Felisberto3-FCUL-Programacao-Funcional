@@ -4,6 +4,9 @@ factorial x = x * factorial (x - 1)
 f 0 a b = a
 f x a b = f (x - 1) b (a + b)
 
+-- diferente way to do that
+fact n = product [1 .. n]
+
 listNf = [(x, f x 0 1) | x <- [0 ..]]
 
 --  using function sum and product
@@ -31,3 +34,13 @@ b 1 = [1]
 b x = b (div x 2) ++ [mod x 2]
 
 -- como usar o | no haskell
+
+-- testing
+list = [1 .. 4]
+
+list2 = [-2 .. 4]
+
+r = zip list list2
+
+c :: Double -> Double
+c r = 2 * pi * r
