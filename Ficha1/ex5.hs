@@ -1,0 +1,1 @@
+funcaoMaiorQue10 list = length list > 10
