@@ -41,7 +41,4 @@ somatorio list = sum (take 5 list)
 somatorio2 list n = sum (take n list)
 
 -- j)
-func list1 list2 =
-  last list1 == last list2
-    && length list1 == length list2
-    && not (null list1 && null list2)
+func list1 list2 = last list1 == last list2 && length list1 == length list2 && not (null list1 && null list2)
