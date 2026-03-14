@@ -1,0 +1,1 @@
+length' list = sum [1 | _ <- list]
