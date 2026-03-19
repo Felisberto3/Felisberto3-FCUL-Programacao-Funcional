@@ -1,0 +1,1 @@
+//resolver os problemas do ex1.hs com "case of"
