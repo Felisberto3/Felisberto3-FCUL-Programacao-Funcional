@@ -44,3 +44,20 @@ r = zip list list2
 
 c :: Double -> Double
 c r = 2 * pi * r
+
+x :: Int
+x = 2
+
+div' :: (Fractional y) => y -> y -> y
+div' y b = ((4 + y + b) / (fromIntegral x + b)) / b
+
+-- max in list (great!)
+maximum' [x] = x
+maximum' (x : xs) = max x (maximum' xs)
+
+replicate' :: (Integral b) => b -> a -> [a]
+replicate' 0 x = []
+replicate' n x = x : replicate' (n - 1) x
+
+-- curried functions
+novaList = map (\x -> x ^ 2 + 1)
