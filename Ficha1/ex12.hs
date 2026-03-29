@@ -1,6 +1,7 @@
 -- a
 perfeito n = [i | i <- [1 .. n - 1], mod n i == 0]
 
+-- para intervalos, taxes rages é o mais simples de se usar.
 factores n = factoresAux n 1
   where
     factoresAux n i

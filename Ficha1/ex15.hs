@@ -1,0 +1,1 @@
+reproduz v = concat [replicate i i | i <- v]
