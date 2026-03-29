@@ -1,0 +1,1 @@
+matId i = [[if c == r then 1 else 0 | c <- [1 .. i]] | r <- [1 .. i]]
