@@ -3,4 +3,5 @@
 -- onde a primeira partição é dada pelos primeiros dois elementos da lista,
 -- a segunda partição pelo segundo e terceiro elementos da lista, e assim
 -- adiante. Por exemplo:
+particao :: (Enum a, Fractional a) => a -> a -> a -> [a]
 particao a b n = [a + ((b - a) / n) * x | x <- [0 .. n]]
