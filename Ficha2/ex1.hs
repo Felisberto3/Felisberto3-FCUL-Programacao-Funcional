@@ -1,0 +1,7 @@
+-- 1-a) (Int,Int,Int)
+-- 1-b) [Int]
+-- 1-c)  [(Int, Int)]
+-- 1-d) type Aluno = (String, Int, [(String, Int)])
+-- 1-e) [Aluno]
+-- 1-f) [String]
+-- 1-g) [[String]]

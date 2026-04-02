@@ -83,3 +83,7 @@ zipWith' :: (a -> a -> a) -> [a] -> [a] -> [a]
 zipWith' _ _ [] = []
 zipWith' _ [] _ = []
 zipWith' f (x : xs) (y : ys) = f x y : zipWith' f xs ys
+
+chunksOf :: Int -> [a] -> [[a]]
+chunksOf _ [] = []
+chunksOf n list = take n list : chunksOf n (drop n list)
