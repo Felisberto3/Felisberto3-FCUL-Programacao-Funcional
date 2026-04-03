@@ -12,3 +12,14 @@ leetSpeak (x : xs) = l : leetSpeak xs
       | x == 's' = '5'
       | x == 'e' = '3'
       | otherwise = toUpper x
+
+leetSpeak' = map f
+  where
+    f x
+      | x == 'a' = '4'
+      | x == 'i' = '1'
+      | x == 't' = '7'
+      | x == 'o' = '0'
+      | x == 's' = '5'
+      | x == 'e' = '3'
+      | otherwise = toUpper x
