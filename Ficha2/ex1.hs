@@ -46,4 +46,4 @@
 -- (c) pair x y = (x,y):: x-> y -> (x,y)
 -- (d) double x = 2*x:: Num a => a -> a
 -- (e) palin xs = reverse xs == xs :: Eq a => [a] -> Bool
--- (f) twice f x = f (f x):: (a-> a) -> a -> a
+-- (f) twice f x = f (f x):: (a-> a) -> a -> a1
