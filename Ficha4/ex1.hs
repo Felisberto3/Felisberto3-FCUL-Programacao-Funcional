@@ -12,6 +12,7 @@ replicate' n x
 
 -- c)
 maximo:: Ord a => [a] -> a
+maximo [] = error "A lista nao pode estar vazia"
 maximo [x] = x
 maximo (x:xs) 
     | x> maximo(xs)  = x
@@ -51,3 +52,8 @@ frase _ [] = []
 frase n (x:xs) 
     | n == fst x = snd x++ frase n xs
     | otherwise = frase n xs
+
+trocaPares:: [a] -> [a]
+trocaPares [] = []
+trocaPares [x] = [x]
+trocaPares (x:y:resto) = y:x:trocaPares resto
