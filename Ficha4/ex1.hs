@@ -36,3 +36,18 @@ altera (x:xs) a1 a2
     |  x < a1 = a2: altera xs a1 a2
     | otherwise = x:altera xs a1 a2
 
+zip':: [a] -> [b] -> [(a,b)]
+zip' [] _ = []
+zip' _ [] = []
+zip' (x:xs) (y:ys) = (x,y) :zip' xs ys
+
+
+potencias:: Integer -> [Integer] -> [Integer]
+potencias _ [] = []
+potencias n (x:xs) = n^x:potencias n xs
+
+frase :: Int -> [(Int, String)] -> String
+frase _ [] = []
+frase n (x:xs) 
+    | n == fst x = snd x++ frase n xs
+    | otherwise = frase n xs
