@@ -49,11 +49,25 @@ potencias n (x:xs) = n^x:potencias n xs
 
 frase :: Int -> [(Int, String)] -> String
 frase _ [] = []
-frase n (x:xs) 
-    | n == fst x = snd x++ frase n xs
-    | otherwise = frase n xs
+frase n ((key, value):rest) 
+    | n == key = value ++ frase n rest
+    | otherwise = frase n rest
 
 trocaPares:: [a] -> [a]
 trocaPares [] = []
 trocaPares [x] = [x]
 trocaPares (x:y:resto) = y:x:trocaPares resto
+
+multiplos:: [Int] -> Int -> [Int]
+multiplos [] _ = []
+multiplos (x:xs) n
+    | x `mod` n == 0  = x: multiplos xs n 
+    | otherwise = multiplos xs n 
+
+posicoes :: [Int] -> Int -> [Int]
+posicoes list n = aux list n 0
+    where 
+        aux [] _ _ = []
+        aux (x:xs) n pos 
+            | x `mod` n == 0 = pos: aux xs n (pos+1)
+            | otherwise = aux xs n (pos + 1) 
