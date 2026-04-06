@@ -1,3 +1,4 @@
+-- -a)
 insert :: (Ord a) => a -> [a] -> [a]
 insert n [] = [n]
 insert n (x : xs)
