@@ -21,7 +21,9 @@ maximo (x : xs)
 -- -d)
 elem' :: (Eq a) => a -> [a] -> Bool
 elem' _ [] = False
-elem' n (x : xs) = x == n || elem' n xs
+elem' n (x : xs)
+  | x == n = True
+  | otherwise = elem' n xs
 
 -- e)
 substitui :: (Eq a) => a -> a -> [a] -> [a]
