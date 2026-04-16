@@ -1,0 +1,20 @@
+-- 1. Descreva o comportamento e um tipo para cada uma das seguintes
+-- secções.
+-- (a) (*2) 
+            -- Comportamento: Multiplica a por 2
+            -- :: Num a => a -> a
+-- (b) (>0) 
+            -- Comportamento: Verifica se a > que 0
+            -- :: (Ord a, Num a) => a -> Bool
+-- (c) (1/)
+            -- Comportamento: Acha o inverso de um numero
+            -- :: Fractional a => a -> a 
+-- (d) (/2)
+            --Comportamento: Acha a metade de um numero
+            -- :: Fractional a => a -> a
+-- (e) (+1)
+            -- Comportamento: Soma um numero a 1.
+            -- :: Num a=> a->a
+-- (f) (++"\n") 
+            -- Comportamento: Junta duas Strings.
+            -- :: String -> String
