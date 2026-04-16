@@ -1,4 +1,3 @@
-import Data.Type.Coercion (trans)
 
 factorial 0 = 1
 factorial x = x * factorial (x - 1)
@@ -87,3 +86,13 @@ zipWith' f (x : xs) (y : ys) = f x y : zipWith' f xs ys
 chunksOf :: Int -> [a] -> [[a]]
 chunksOf _ [] = []
 chunksOf n list = take n list : chunksOf n (drop n list)
+ 
+foldl' :: (Int -> Int -> Int) -> Int -> [Int] -> Int
+foldl' _ acc [] = acc
+foldl' f acc (x:xs) = foldl' f (f x acc) xs
+
+foldr':: (Int -> Int -> Int) -> Int -> [Int] -> Int
+foldr' _ acc [] = acc
+foldr' f acc (x:xs) = f x (foldr' f  acc xs)
+  -- [2,4,5]
+  -- f 2 (f 4 (f 5 1))
