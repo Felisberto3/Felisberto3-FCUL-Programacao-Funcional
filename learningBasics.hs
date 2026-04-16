@@ -94,5 +94,17 @@ foldl' f acc (x:xs) = foldl' f (f x acc) xs
 foldr':: (Int -> Int -> Int) -> Int -> [Int] -> Int
 foldr' _ acc [] = acc
 foldr' f acc (x:xs) = f x (foldr' f  acc xs)
-  -- [2,4,5]
-  -- f 2 (f 4 (f 5 1))
+
+foldr1':: (Int -> Int -> Int) -> [Int] -> Int
+foldr1' _ [] = error " list is empty"
+foldr1' _ [x] = x
+foldr1' f (x:xs) = f x (foldr1' f xs)
+
+foldl1':: (Int -> Int -> Int) -> [Int] -> Int
+foldl1' _ [] = error " list is empty"
+foldl1' f (x:xs) =  go x xs
+    where 
+      go acc [] = acc
+      go acc  (y:ys) =  go (f acc y) ys
+
+  -- ((f 2 3) f 5 )
