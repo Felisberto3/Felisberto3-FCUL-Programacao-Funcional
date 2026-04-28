@@ -1,3 +1,5 @@
+import Data.Char
+
 -- 1. Descreva o comportamento e um tipo para cada uma das seguintes
 -- secções.
 -- (a) (*2)
@@ -67,3 +69,11 @@ sucessor3 = add3 1
 -- (i) map (^2)(filter (>0)[-3..3])
 ------------ ::[Integer]
 ------------ [1,2,3]
+encode :: Int -> [Char] -> [Char]
+encode shift msg =
+  let ords = map ord msg
+      shifted = map (+ shift) ords
+   in map chr shifted
+
+decode :: Int -> String -> String
+decode shift = encode (negate shift)
