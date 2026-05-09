@@ -1,7 +1,6 @@
 package Taining.PFemJava.Collectors;
 
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Loja {
@@ -23,6 +22,9 @@ public class Loja {
 
         System.out.println("Todas idades Pares: " + todasIdadesPares);
         System.out.println("Todas idades Impares: " + todasIdadesImpares);
+
+        ///////
+        System.out.println("GErando String");
 
     }
 }
