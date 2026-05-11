@@ -23,7 +23,8 @@ public class MapPro {
 
         mapPessoa.keySet().forEach(x -> System.out.println(mapPessoa.get(x)));
 
-        Map<String, Integer> mapNomeIdade = list.stream().collect(Collectors.toMap(Pessoa::name, Pessoa::idade));
+        Map<String, Integer> mapNomeIdade = list.stream()
+                .collect(Collectors.toMap(Pessoa::name, Pessoa::idade, Math::max));
         System.out.println("====== Testando Map (Nome e Idade) ======");
         mapNomeIdade.keySet().forEach(x -> System.out.println(mapNomeIdade.get(x)));
 
