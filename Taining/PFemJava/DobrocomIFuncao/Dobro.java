@@ -53,5 +53,7 @@ public class Dobro implements Funcao<Integer, Integer> {
             System.out.print(integer + " ");
         }
         System.out.println();
+
     }
+
 }
