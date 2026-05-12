@@ -13,6 +13,9 @@ null' (M list) = null list
 --   show (M [(k, v)]) = "[( " ++ show k ++ "," ++ show v ++ " )]"
 --   show (M []) = "[]"
 
+size :: Map k v -> Int
+size (M list) = length list
+
 member :: (Ord k) => k -> Map k v -> Bool
 member k (M list) = any (\(key, _) -> key == k) list
 
@@ -55,3 +58,6 @@ insertInList f (key, value) (M ((k, v) : xs))
 
 fromList :: (Ord k) => [(k, v)] -> Map k v
 fromList = M
+
+toList :: Map k v -> [(k, v)]
+toList (M list) = list
