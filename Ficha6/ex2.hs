@@ -52,3 +52,6 @@ insertInList f (key, value) (M ((k, v) : xs))
   | otherwise = M ((k, v) : resto)
   where
     M resto = insertInList f (key, value) (M xs)
+
+fromList :: (Ord k) => [(k, v)] -> Map k v
+fromList = M
