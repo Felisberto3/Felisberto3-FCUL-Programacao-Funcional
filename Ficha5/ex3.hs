@@ -1,0 +1,28 @@
+-- 3. Determine um tipo e o valor para cada expressão.
+-- (a) map (+1)[1..3]
+------------ ::( Num a, Enum a) => a
+------------ [2,3,4]
+-- (b) map (>0)[3,-5,-2,0]
+------------ :: [Bool]
+------------ [True, False, False, False]
+-- (c) map (++"s")["A", "arte", "do", "aluno"]
+------------ :: [String]
+------------ ["As", "artes", "dos", "alunos"]
+-- (d) map ("s"++)["o", "aluno","bem-comportado"]
+------------ :: [String]
+------------ ["so", "saluno","sbem-comportado"]
+-- (e) let f x = x * x in map (map f)[[1,2],[3,4,5]]
+------------ ::Num a =>  [[a]]
+------------ [[1,4],[9,16,25]]
+-- (f) filter (>5)[1..6]
+------------ ::(Num a, Enum a , Ord a) =>  [a]
+------------ [6]
+-- (g) filter even [1..10]
+------------ ::(Integral a) =>  [a]
+------------ [2,4,6,8,10]
+-- (h) filter (>0)(map (^2)[-3..3])
+------------ ::[Integer]
+------------ [9,4,1,0,1,4,9]
+-- (i) map (^2)(filter (>0)[-3..3])
+------------ ::[Integer]
+------------ [1,2,3]
