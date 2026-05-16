@@ -1,4 +1,3 @@
-
 factorial 0 = 1
 factorial x = x * factorial (x - 1)
 
@@ -86,25 +85,32 @@ zipWith' f (x : xs) (y : ys) = f x y : zipWith' f xs ys
 chunksOf :: Int -> [a] -> [[a]]
 chunksOf _ [] = []
 chunksOf n list = take n list : chunksOf n (drop n list)
- 
+
 foldl' :: (Int -> Int -> Int) -> Int -> [Int] -> Int
 foldl' _ acc [] = acc
-foldl' f acc (x:xs) = foldl' f (f x acc) xs
+foldl' f acc (x : xs) = foldl' f (f x acc) xs
 
-foldr':: (Int -> Int -> Int) -> Int -> [Int] -> Int
+foldr' :: (Int -> Int -> Int) -> Int -> [Int] -> Int
 foldr' _ acc [] = acc
-foldr' f acc (x:xs) = f x (foldr' f  acc xs)
+foldr' f acc (x : xs) = f x (foldr' f acc xs)
 
-foldr1':: (Int -> Int -> Int) -> [Int] -> Int
+foldr1' :: (Int -> Int -> Int) -> [Int] -> Int
 foldr1' _ [] = error " list is empty"
 foldr1' _ [x] = x
-foldr1' f (x:xs) = f x (foldr1' f xs)
+foldr1' f (x : xs) = f x (foldr1' f xs)
 
-foldl1':: (Int -> Int -> Int) -> [Int] -> Int
+foldl1' :: (Int -> Int -> Int) -> [Int] -> Int
 foldl1' _ [] = error " list is empty"
-foldl1' f (x:xs) =  go x xs
-    where 
-      go acc [] = acc
-      go acc  (y:ys) =  go (f acc y) ys
+foldl1' f (x : xs) = go x xs
+  where
+    go acc [] = acc
+    go acc (y : ys) = go (f acc y) ys
 
-  -- ((f 2 3) f 5 )
+-- ((f 2 3) f 5 )
+
+data Pessoa = Pessoa {name :: String, idade :: Int} deriving (Show, Eq)
+
+list4 :: [Pessoa]
+list4 = [Pessoa {name = "Felisberto", idade = i * (40 `div` 3)} | i <- [1 .. 5]]
+
+list3 = map idade list4
